@@ -18,6 +18,7 @@ const Market: FC<IProps> = ({ market, isLatest }) => {
               key={index}
               selection={selection}
               onlyTwoItems={market.selections.length === 2}
+              marketName={market.name}
             />
           ))}
         </div>

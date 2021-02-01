@@ -6,4 +6,14 @@
     border-color: var(--primary-color);
     color: var(--primary-color);
   }
+
+  &.selected {
+    background-color: #389e0d;
+    color: white;
+    border-color: #237804;
+
+    &:hover {
+      border-color: #d9f7be;
+    }
+  }
 }

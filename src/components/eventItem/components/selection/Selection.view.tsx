@@ -1,16 +1,31 @@
 import { FC } from 'react';
 import { ISelection } from 'common/types';
 import styles from './Selection.module.scss';
+import { useBetSlipContext } from 'hooks';
 
 type IProps = {
   selection: ISelection;
+  marketName: string;
   onlyTwoItems: boolean;
 };
 
-const Selection: FC<IProps> = ({ selection, onlyTwoItems }) => {
+const Selection: FC<IProps> = ({ selection, onlyTwoItems, marketName }) => {
+  const { addBet, removeBet, selections } = useBetSlipContext();
+  const isSelected = selections.find((s) => s.id === selection.id) != null;
+
+  const onClick = () => {
+    if (isSelected) removeBet(selection.id);
+    else addBet(selection, marketName);
+  };
+
   return (
     <div className={onlyTwoItems ? 'col-5' : 'col-4'}>
-      <div className={`${styles.selection} rounded p-1`}>
+      <div
+        className={`${styles.selection} ${
+          isSelected && styles.selected
+        } rounded p-1`}
+        onClick={onClick}
+      >
         <div className="text-center">{selection.name}</div>
         <div className="text-center font-weight-bold">{selection.price}</div>
       </div>
