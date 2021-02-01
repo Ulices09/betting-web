@@ -7,7 +7,7 @@ const EventList: FC = () => {
   const { data, loading, error } = useRequest(eventService.getEvents);
 
   return (
-    <Layout>
+    <Layout loading={loading} error={error}>
       {data?.map((event, index) => {
         if (event.markets.length === 0) return null;
         return <EventItem key={index} event={event} />;
