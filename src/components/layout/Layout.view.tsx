@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import { Loader, Drawer } from 'components';
+import { Loader, Drawer, BetSlip } from 'components';
 import { ListSvg } from 'assets/svg';
 import styles from './Layout.module.scss';
 
@@ -34,7 +34,9 @@ const Layout: FC<IProps> = ({ children, loading, error }) => {
           onClick={() => setDrawerOpen(true)}
         />
       </nav>
-      <Drawer isOpen={drawerOpen} onClickClose={() => setDrawerOpen(false)} />
+      <Drawer isOpen={drawerOpen} onClickClose={() => setDrawerOpen(false)}>
+        <BetSlip />
+      </Drawer>
       <div className={styles.content}>{renderContent()}</div>
     </div>
   );

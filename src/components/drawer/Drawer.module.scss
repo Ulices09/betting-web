@@ -14,9 +14,17 @@
   padding-right: 8px;
   width: 0px;
 
+  .content {
+    display: none;
+  }
+
   &.open {
     width: 320px;
     right: 0;
+
+    .content {
+      display: block;
+    }
   }
 }
 

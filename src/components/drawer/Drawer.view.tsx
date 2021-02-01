@@ -19,7 +19,7 @@ const Drawer: FC<IProps> = ({ children, isOpen, onClickClose }) => {
           onClick={onClickClose}
         />
       </div>
-      <div>{children}</div>
+      <div className={`${styles.content} mt-5 mb-3`}>{children}</div>
     </div>
   );
 };
