@@ -26,8 +26,12 @@ const Selection: FC<IProps> = ({ selection, onlyTwoItems, marketName }) => {
         } rounded p-1`}
         onClick={onClick}
       >
-        <div className="text-center">{selection.name}</div>
-        <div className="text-center font-weight-bold">{selection.price}</div>
+        <div data-test="name" className="text-center">
+          {selection.name}
+        </div>
+        <div data-test="price" className="text-center font-weight-bold">
+          {selection.price}
+        </div>
       </div>
     </div>
   );
