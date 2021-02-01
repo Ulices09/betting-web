@@ -1,0 +1,29 @@
+.container {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  right: -50px;
+  background-color: #fff;
+  box-shadow: -0.25rem 0 0.25rem rgba(0, 0, 0, 0.075);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
+  width: 0px;
+
+  &.open {
+    width: 320px;
+    right: 0;
+  }
+}
+
+.close {
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

@@ -1,5 +1,5 @@
-import { FC } from 'react';
-import { Loader } from 'components';
+import { FC, useState } from 'react';
+import { Loader, Drawer } from 'components';
 import { ListSvg } from 'assets/svg';
 import styles from './Layout.module.scss';
 
@@ -9,6 +9,8 @@ type IProps = {
 };
 
 const Layout: FC<IProps> = ({ children, loading, error }) => {
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
   const renderContent = () => {
     if (error)
       return (
@@ -24,8 +26,15 @@ const Layout: FC<IProps> = ({ children, loading, error }) => {
     <div className="container">
       <nav className="navbar fixed-top bg-white shadow-sm">
         <h2 className="color-primary">Betting Web</h2>
-        <img src={ListSvg} alt="list" width={30} className={styles.menu} />
+        <img
+          src={ListSvg}
+          alt="list"
+          width={30}
+          className={styles.menu}
+          onClick={() => setDrawerOpen(true)}
+        />
       </nav>
+      <Drawer isOpen={drawerOpen} onClickClose={() => setDrawerOpen(false)} />
       <div className={styles.content}>{renderContent()}</div>
     </div>
   );
