@@ -1,1 +1,1 @@
-export { default as EventList } from "./eventList";
+export { default as EventList } from './eventList';

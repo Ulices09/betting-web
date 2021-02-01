@@ -1,6 +1,6 @@
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
-import { paths } from "./paths";
-import { EventList } from "../scenes";
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { paths } from './paths';
+import { EventList } from '../scenes';
 
 const Routes = () => (
   <BrowserRouter>
