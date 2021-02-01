@@ -1,6 +1,7 @@
 import { FC } from 'react';
-import styles from './Layout.module.scss';
 import { Loader } from 'components';
+import { ListSvg } from 'assets/svg';
+import styles from './Layout.module.scss';
 
 type IProps = {
   loading?: boolean;
@@ -23,6 +24,7 @@ const Layout: FC<IProps> = ({ children, loading, error }) => {
     <div className="container">
       <nav className="navbar fixed-top bg-white shadow-sm">
         <h2 className="color-primary">Betting Web</h2>
+        <img src={ListSvg} alt="list" width={30} className={styles.menu} />
       </nav>
       <div className={styles.content}>{renderContent()}</div>
     </div>
