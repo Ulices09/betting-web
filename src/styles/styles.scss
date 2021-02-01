@@ -1,1 +1,10 @@
 @import 'vendors/vendors';
+@import 'base/base';
+
+body {
+  color: #333745;
+}
+
+.color-primary {
+  color: var(--primary-color);
+}

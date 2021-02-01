@@ -1,0 +1,9 @@
+.selection {
+  border: 1px solid #333745;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+  }
+}
