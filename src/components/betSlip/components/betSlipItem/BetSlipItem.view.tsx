@@ -21,6 +21,7 @@ const BetSlipItem: FC<IProps> = ({
           <div>{selection.name}</div>
           <div className="font-weight-bold">{selection.price}</div>
           <div
+            data-test="remove"
             className={styles.remove}
             onClick={() => onClickDelete(selection.id)}
           >
